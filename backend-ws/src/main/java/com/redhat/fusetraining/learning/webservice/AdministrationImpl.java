@@ -6,10 +6,15 @@ import java.util.List;
 
 import javax.jws.WebService;
 
+import org.apache.cxf.interceptor.InInterceptors;
+import org.apache.cxf.interceptor.OutInterceptors;
+
 import com.redhat.fusetraining.learning.model.Course;
 import com.redhat.fusetraining.learning.model.Student;
 
 @WebService(endpointInterface = "com.redhat.fusetraining.learning.webservice.Administration")
+@InInterceptors(interceptors = "org.apache.cxf.interceptor.LoggingInInterceptor")
+@OutInterceptors(interceptors = "org.apache.cxf.interceptor.LoggingOutInterceptor")
 public class AdministrationImpl implements Administration {
 	
 	
