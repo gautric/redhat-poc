@@ -10,11 +10,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
  -->
-	 <groupId>org.redhat.poc</groupId>
- 
-    <name>RedHat :: POC :: Backend - WS</name>
-    <artifactId>backend-ws</artifactId>
-    <version>1.0-SNAPSHOT</version>
+
+	<name>RedHat :: POC :: Backend - WS</name>
+	<artifactId>backend-ws</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<groupId>org.redhat.poc</groupId>
 
     <dependencies>
         <dependency>

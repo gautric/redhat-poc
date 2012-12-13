@@ -11,6 +11,8 @@ import com.redhat.fusetraining.learning.model.Student;
 
 @WebService(endpointInterface = "com.redhat.fusetraining.learning.webservice.Administration")
 public class AdministrationImpl implements Administration {
+	
+	
 
 	@Override
 	public List<Course> getCourseList() {
@@ -20,8 +22,7 @@ public class AdministrationImpl implements Administration {
 
 	@Override
 	public void register(Student student, Course course) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
