@@ -36,6 +36,7 @@
     </dependencies>
 
     <build>
+	    <finalName>backend-ws</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
