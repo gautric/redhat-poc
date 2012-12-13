@@ -40,7 +40,7 @@
 
 <build>
 	<plugins>
-        <!--
+
 <plugin>
 	<groupId>org.apache.cxf</groupId>
 	<artifactId>cxf-codegen-plugin</artifactId>
@@ -53,7 +53,7 @@
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wsdlOptions>
                 <wsdlOption>
-                  <wsdl>${basedir}/src/main/resources/wsdl/order.wsdl</wsdl>
+                  <wsdl>${basedir}/src/main/resources/wsdl/administration.wsdl</wsdl>
                   <extraargs>
                     <extraarg>-impl</extraarg>
                   </extraargs>
@@ -66,12 +66,21 @@
           </execution>
         </executions>
       </plugin>
-      -->
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>2.6</version>
+      </plugin>
+
+      <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.2.1</version>
+          <configuration>
+              <executable>java</executable>
+              <mainClass>org.redhat.poc.MainApplication</mainClass>
+          </configuration>
       </plugin>
 </plugins>
 </build>
