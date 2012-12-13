@@ -1,0 +1,126 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.learning.fusetraining.redhat.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="AdministrationImplService" targetNamespace="http://webservice.learning.fusetraining.redhat.com/">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservice.learning.fusetraining.redhat.com/" elementFormDefault="unqualified" targetNamespace="http://webservice.learning.fusetraining.redhat.com/" version="1.0">
+            <xs:element name="getCourseList" type="tns:getCourseList"/>
+            <xs:element name="getCourseListResponse" type="tns:getCourseListResponse"/>
+            <xs:element name="getStudentList" type="tns:getStudentList"/>
+            <xs:element name="getStudentListResponse" type="tns:getStudentListResponse"/>
+            <xs:element name="register" type="tns:register"/>
+            <xs:element name="registerResponse" type="tns:registerResponse"/>
+            <xs:complexType name="getStudentList">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="tns:course"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="course">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="content" type="xs:string"/>
+                    <xs:element minOccurs="0" name="examDate" type="xs:dateTime"/>
+                    <xs:element name="maxStudent" type="xs:long"/>
+                    <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="stopDate" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="title" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getStudentListResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:student"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="student">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="birthday" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="city" type="xs:string"/>
+                    <xs:element minOccurs="0" name="email" type="xs:string"/>
+                    <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getCourseList">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="getCourseListResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:course"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="register">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="tns:student"/>
+                    <xs:element minOccurs="0" name="arg1" type="tns:course"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="registerResponse">
+                <xs:sequence/>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="registerResponse">
+        <wsdl:part element="tns:registerResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getCourseList">
+        <wsdl:part element="tns:getCourseList" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getStudentList">
+        <wsdl:part element="tns:getStudentList" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getStudentListResponse">
+        <wsdl:part element="tns:getStudentListResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="register">
+        <wsdl:part element="tns:register" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getCourseListResponse">
+        <wsdl:part element="tns:getCourseListResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="Administration">
+        <wsdl:operation name="getStudentList">
+            <wsdl:input message="tns:getStudentList" name="getStudentList"></wsdl:input>
+            <wsdl:output message="tns:getStudentListResponse" name="getStudentListResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCourseList">
+            <wsdl:input message="tns:getCourseList" name="getCourseList"></wsdl:input>
+            <wsdl:output message="tns:getCourseListResponse" name="getCourseListResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="register">
+            <wsdl:input message="tns:register" name="register"></wsdl:input>
+            <wsdl:output message="tns:registerResponse" name="registerResponse"></wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AdministrationImplServiceSoapBinding" type="tns:Administration">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getCourseList">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getCourseList">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getCourseListResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getStudentList">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getStudentList">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getStudentListResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="register">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="register">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="registerResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AdministrationImplService">
+        <wsdl:port binding="tns:AdministrationImplServiceSoapBinding" name="AdministrationImplPort">
+            <!-- <soap:address location="http://localhost:8080/backend-ws/Administration"/>  -->
+            <soap:address location="http://10.200.10.116:8080/backend-ws/Administration"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
