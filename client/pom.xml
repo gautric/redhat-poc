@@ -36,6 +36,21 @@
 		<artifactId>cxf-rt-transports-http-jetty</artifactId>
 		<version>${cxf-version}</version>
 	</dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j-version}</version>
+        </dependency>
 </dependencies>
 
 <build>
@@ -77,10 +92,17 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.2.1</version>
-          <configuration>
-              <executable>java</executable>
-              <mainClass>org.redhat.poc.MainApplication</mainClass>
-          </configuration>
+          <executions>
+              <execution>
+              <phase>test</phase>
+              <goals>
+                  <goal>java</goal>
+              </goals>
+              <configuration>
+                  <mainClass>org.redhat.poc.MainApplication</mainClass>
+              </configuration>
+              </execution>
+          </executions>
       </plugin>
 </plugins>
 </build>
