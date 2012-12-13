@@ -18,8 +18,9 @@
     </modules>
 
     <properties>
-        <camel-version>2.10.0.fuse-71-045</camel-version>
+        <camel-version>2.10.1</camel-version>
         <felix-version>2.3.7</felix-version>
+        <cxf-version>2.6.0</cxf-version>
         <fuse-esb.version>7.1.45</fuse-esb.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
